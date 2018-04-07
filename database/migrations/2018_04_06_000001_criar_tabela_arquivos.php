@@ -4,11 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CriarTabelaArquivos extends Migration{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('arquivos', function (Blueprint $table) {
@@ -17,11 +13,7 @@ class CriarTabelaArquivos extends Migration{
             $table->timestamps();
         });
     }
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('arquivos');
