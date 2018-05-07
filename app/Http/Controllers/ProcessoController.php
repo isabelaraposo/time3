@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use app\Processo;
+use App\Processo;
 use Illuminate\Http\Request;
 
 class ProcessoController extends Controller
 {
     public function listar() {
-        return Processo :: all();
+        return Processo::all();
         
     }
         public function criar() {
@@ -16,13 +16,13 @@ class ProcessoController extends Controller
         
     }
         public function editar($id) {
-            return Processo ::find($id);
+            return Processo::find($id);
         
     }
         public function remover() {
             $processo = Processo::find($id);
             $processo->delete();
-            return redirect('processo/listar');
+            return redirect('Processo/listar');
         
     }
         public function salvar(Request $request) {
