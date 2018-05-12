@@ -1,12 +1,11 @@
 <?php
 
-
 Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::group(['prefix' => 'processo'], function () {
     Route::get('listar', 'ProcessoController@listar');
@@ -22,5 +21,13 @@ Route:: group(['prefix' => 'assunto'], function(){
     Route::get('(id)/editar', 'AssuntoController@editar');
     Route::get('(id)/remover', 'AssuntoController@remover');
     Route::get('salvar', 'AssuntoController@salvar');
+});
+
+Route:: group(['prefix' => 'Arquivo'], function(){
+    Route::get('listar', 'ArquivoController@listar');
+    Route::get('criar', 'ArquivoController@criar');
+    Route::get('(id)/editar', 'ArquivoController@editar');
+    Route::get('(id)/remover', 'ArquivoController@remover');
+    Route::get('salvar', 'ArquivoController@salvar');
 
 });
