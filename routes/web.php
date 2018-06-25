@@ -15,9 +15,9 @@ Route:: group(['prefix' => 'unidade'], function(){
 Route::group(['prefix' => 'processo'], function () {
     Route::get('listar', 'ProcessoController@listar');
     Route::get('criar', 'ProcessoController@criar');
-    Route::get('(id)/editar', 'ProcessoController@editar');
-    Route::get('(id/remover)', 'ProcessoController@remover');
-    Route::get('salvar', 'ProcessoController@salvar');
+    Route::get('{id}/editar', 'ProcessoController@editar');
+    Route::get('{id}/remover', 'ProcessoController@remover');
+    Route::post('salvar', 'ProcessoController@salvar');
 }); 
 Route:: group(['prefix' => 'assunto'], function(){
     Route::get('listar', 'AssuntoController@listar');
@@ -32,4 +32,8 @@ Route:: group(['prefix' => 'Arquivo'], function(){
     Route::get('(id)/editar', 'ArquivoController@editar');
     Route::get('(id)/remover', 'ArquivoController@remover');
     Route::get('salvar', 'ArquivoController@salvar');
+});
+Route::group(['middleware'=>['web']],function(){
+    Route::resource('processo','ProcessoController');
+    
 });

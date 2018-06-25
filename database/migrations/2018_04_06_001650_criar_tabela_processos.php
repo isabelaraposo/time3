@@ -20,7 +20,7 @@ class CriarTabelaProcessos extends Migration
             $table->date('data');
             $table->string('situacao');
             $table->string('assunto');
-            $table->string('arquivos');
+            $table->string('arquivo');
             $table->string('unidade');
             $table->timestamps();
         });
