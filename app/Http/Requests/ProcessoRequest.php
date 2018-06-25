@@ -24,13 +24,13 @@ class ProcessoRequest extends FormRequest
     public function rules()
     {
         return [
-            'cod_processo' => 'required|numeric',
-            'descricao' => 'required|string',
+            'cod_processo' => 'required|max:15',
+            'descricao' => 'required|max:150',
             'data' => 'required|date',
-            'situacao' => 'required|string',
-            'assunto' => 'required|string',
-            'arquivo' => 'required|string',
-            'unidade' => 'required|string',            
+            'situacao' => 'required|max:50',
+            'assunto' => 'required|max:50',
+            'arquivo' => 'required|max:50',
+            'unidade' => 'required|max:50',            
         
         ];
     }
@@ -38,12 +38,13 @@ class ProcessoRequest extends FormRequest
        public function messages()
     {
         return [
-            'cod_processo.required' => 'Campo Obrigatório', 
-            'data.required'=> 'Campo Obrigatório',
-            'situacao.required'=> 'Campo Obrigatório',
-            'assunto.required'=> 'Campo Obrigatório',
-            'arquivo.required'=> 'Campo Obrigatório',
-            'unidade.required'=> 'Campo Obrigatório'
+            'cod_processo.required' => 'Campo Cod_processo é  obrigatório', 
+            'data.required'=> 'Campo data é obrigatório',
+            'descricao.required'=>'Campo descrição é obrigatório',
+            'situacao.required'=> 'Campo situação é obrigatório',
+            'assunto.required'=> 'Campo assunto é obrigatório',
+            'arquivo.required'=> 'Campo arquivo é obrigatório',
+            'unidade.required'=> 'Campo unidade é obrigatório'
 
         ];
     }
