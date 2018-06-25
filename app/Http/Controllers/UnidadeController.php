@@ -23,10 +23,10 @@ class UnidadeController extends Controller
         
     }
         public function salvar(Request $request) {
-            $unidade = new Processo();
+            $unidade = new Unidade();
             
             if($request->has('id')){
-                $unidade = Processo::fid($id);
+                $unidade = Unidade::fid($id);
             }
             
             $unidade->id = $request->id;
